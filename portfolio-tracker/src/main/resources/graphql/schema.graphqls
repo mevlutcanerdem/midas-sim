@@ -1,0 +1,29 @@
+#1.dısarıya sunacağımız veritipleri (bunlar bizim javadaki entity sınıflarımızın graphql karşılığıdır)
+type User{
+    id: ID!
+    username: String!
+    balance: Float!
+    portfolios: [Portfolio] # Kullanıcıının birden fazla cüzdan satırı olabilir (Liste)
+
+}
+
+type Portfolio{
+    id: ID!
+    asset: Asset!
+    quantity: Float!
+    averageBuyPrice: Float!
+
+}
+
+type Asset{
+    id: ID!
+    symbol: String!
+    name: String!
+}
+
+#Dışarıdan gelebilecek istek tipleri
+
+type Query{
+    #Bana bir id ver, sana o id ye sahip user ı varsa getireyim
+    getUserById(id: ID!): User
+}
