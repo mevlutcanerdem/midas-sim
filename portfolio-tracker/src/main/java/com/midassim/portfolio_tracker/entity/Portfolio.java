@@ -2,6 +2,7 @@ package com.midassim.portfolio_tracker.entity;
 
 
 import jakarta.persistence.*;
+import org.apache.catalina.User;
 
 import java.math.BigDecimal;
 
